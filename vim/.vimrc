@@ -1,146 +1,118 @@
-"=============================================================================
-" General settings
-"=============================================================================
+" å…³é—­å…¼å®¹
+set nocompatible 
+syntax enable
+filetype plugin on
+filetype indent on
+set autoindent              " ä¿æŒä¸å‰ä¸€è¡Œç›¸åŒçš„ç¼©è¿›
+set cindent                 " åœ¨ autoindent åŸºç¡€ä¹‹ä¸Šè¯†åˆ«Cé£æ ¼è‡ªåŠ¨ç¼©è¿›
 
-" ¹Ø±Õ¼æÈİ
-set nocompatible
-" ²»ÓÃ±¸·İ
+colorscheme desert
+
+set nu
+set showcmd
+" æ’å…¥æ¨¡å¼é”®å…¥3ä¸ªå­—ç¬¦ï¼Œä¹‹åæŒ‰5ä¸‹åˆ é™¤ï¼Œåªèƒ½åˆ é™¤3ä¸ªå­—ç¬¦åŠ å¾—åˆ°ä¸¤å£°å˜Ÿå˜Ÿï¼Œstart è§£å†³è¿™ä¸ªé—®é¢˜ã€‚
+" æ’å…¥æ¨¡å¼ä¸‹ï¼Œå…‰æ ‡å¤„äºè¡Œé¦–ï¼ŒæŒ‰ä¸‹åˆ é™¤ï¼Œå¾—åˆ°å˜Ÿå˜Ÿï¼Œeol è§£å†³è¿™ä¸ªé—®é¢˜ã€‚
+" è®¾ç½®äº†è‡ªåŠ¨ç¼©è¿›åï¼Œå¦‚æœå‰ä¸€è¡Œç¼©è¿›äº†ä¸€å®šè·ç¦»ï¼ŒæŒ‰ä¸‹å›è½¦åï¼Œä¸‹ä¸€è¡Œä¹Ÿä¼šä¿æŒç›¸åŒçš„ç¼©è¿›ã€‚é»˜è®¤æƒ…å†µä¸‹ï¼Œæˆ‘ä»¬ä¸èƒ½åœ¨ Insert æ¨¡å¼ä¸‹ç›´æ¥æŒ‰ Backspace åˆ é™¤è¡Œé¦–çš„ç¼©è¿›ï¼Œindent è§£å†³äº†è¿™ä¸ªé—®é¢˜ã€‚
+set backspace=eol,start,indent
+set whichwrap=b,s,<,>,[,]	" é»˜è®¤æƒ…å†µä¸‹ï¼Œåœ¨ VIM ä¸­å½“å…‰æ ‡ç§»åˆ°ä¸€è¡Œæœ€å·¦è¾¹çš„æ—¶å€™ï¼Œæˆ‘ä»¬ç»§ç»­æŒ‰å·¦é”®ï¼Œå…‰æ ‡ä¸èƒ½å›åˆ°ä¸Šä¸€è¡Œçš„æœ€å³è¾¹ã€‚åŒæ ·åœ°ï¼Œå…‰æ ‡åˆ°äº†ä¸€è¡Œæœ€å³è¾¹çš„æ—¶å€™ï¼Œæˆ‘ä»¬ä¸èƒ½é€šè¿‡ç»§ç»­æŒ‰å³è·³åˆ°ä¸‹ä¸€è¡Œçš„æœ€å·¦è¾¹ã€‚
+" é™¤äº† $ . * ^ ä¹‹å¤–å…¶ä»–å…ƒå­—ç¬¦éƒ½è¦åŠ åæ–œæ ã€‚å› ä¸ºä¼—å£éš¾è°ƒï¼Œæœ‰äº›äººå–œæ¬¢æ­£åˆ™è¡¨è¾¾å¼ï¼Œæœ‰äº›äººä¸å–œæ¬¢ã€‚
+set magic
+" æœç´¢æ—¶åŠæ—¶æ˜¾ç¤º
+set showmatch
+" å¼€å¯å®æ—¶æ˜¾ç¤ºæœç´¢ç»“æœåŠŸèƒ½ã€‚éšç€æŒ‰é”®ï¼Œå±å¹•ä¼šåŠ¨ã€‚
+set incsearch
+" é«˜äº®æ˜¾ç¤ºæœç´¢ç»“æœ
+set hlsearch
+" æœç´¢æ—¶å¤§å°å†™ä¸æ•æ„Ÿ
+set ignorecase
+" è®¾ç½®æ™ºèƒ½æ¨¡å¼ï¼Œå½“ä½ æŸ¥æ‰¾é”®å…¥çš„å†…å®¹éƒ½æ˜¯å°å†™åˆ™å¤§å°å†™éƒ½ä¼šåŒ¹é…ï¼Œå¦‚æœé”®å…¥å†…å®¹åŒ…å«å¤§å†™åˆ™å°±æ˜¯å¤§å°å†™æ•æ„Ÿ
+set smartcase
+" ä¸ç”¨å¤‡ä»½
 set nobackup
-" ²»ÓÃswapÎÄ¼ş
+set nowb
+" ä¸ç”¨swapæ–‡ä»¶
 set noswapfile
-" ×Ô¶¯¸Ä±äÂ·¾¶
-set autochdir
+set wildmenu                " åœ¨å‘½ä»¤æ¨¡å¼ä¸‹ä½¿ç”¨ Tab è‡ªåŠ¨è¡¥å…¨çš„æ—¶å€™ï¼Œå°†è¡¥å…¨å†…å®¹ä½¿ç”¨ä¸€ä¸ªæ¼‚äº®çš„å•è¡Œèœå•å½¢å¼æ˜¾ç¤ºå‡ºæ¥
+set tw=80					" å…‰æ ‡è¶…è¿‡ 80 åˆ—çš„æ—¶å€™æŠ˜è¡Œ
+set lbr						" ä¸åœ¨å•è¯ä¸­é—´æ–­è¡Œ
+set fo+=mB					" æ‰“å¼€æ–­è¡Œæ¨¡å—å¯¹äºšæ´²è¯­è¨€æ”¯æŒã€‚m è¡¨ç¤ºå…è®¸åœ¨ä¸¤ä¸ªæ±‰å­—ä¹‹é—´æ–­è¡Œï¼Œå³ä½¿æ±‰å­—ä¹‹é—´æ²¡æœ‰å‡ºç°ç©ºæ ¼ã€‚B è¡¨ç¤ºå°†ä¸¤è¡Œåˆå¹¶ä¸ºä¸€è¡Œçš„æ—¶å€™ï¼Œæ±‰å­—ä¸æ±‰å­—ä¹‹é—´ä¸è¦è¡¥ç©ºæ ¼ã€‚
 
-" Tab related
-set tabstop=4				" Tab ¿í¶ÈÎª 4 ¸ö×Ö·û
-set shiftwidth=4			" ×Ô¶¯Ëõ½øµÄÊ±ºò£¬Ëõ½ø³ß´çÎª 4 ¸ö×Ö·û
-set smarttab				" °´Ò»ÏÂ Backspace ¾ÍÉ¾³ı tabstop ¸ö¿Õ¸ñ
-set expandtab				" ±à¼­Ê±½«ËùÓĞ Tab Ìæ»»Îª¿Õ¸ñ£¬ÓĞÁËÕâ¸öÉèÖÃ²ÅÄÜÊ¹ ts ºÍ sw ¶ÔÓ¦µÄ×Ö·û³ÉÎª¿Õ¸ñ
-set ambiwidth=double		" ·ÀÖ¹ÌØÊâ·ûºÅÎŞ·¨Õı³£ÏÔÊ¾
+set expandtab               " ç¼–è¾‘æ—¶å°†æ‰€æœ‰ Tab æ›¿æ¢ä¸ºç©ºæ ¼ï¼Œæœ‰äº†è¿™ä¸ªè®¾ç½®æ‰èƒ½ä½¿ ts å’Œ sw å¯¹åº”çš„å­—ç¬¦æˆä¸ºç©ºæ ¼
+set smarttab                " æŒ‰ä¸€ä¸‹ Backspace å°±åˆ é™¤ tabstop ä¸ªç©ºæ ¼
+set shiftwidth=4            " è‡ªåŠ¨ç¼©è¿›çš„æ—¶å€™ï¼Œç¼©è¿›å°ºå¯¸ä¸º 4 ä¸ªå­—ç¬¦
+set tabstop=4               " Tab å®½åº¦ä¸º 4 ä¸ªå­—ç¬¦
 
-" Format related
-set tw=80					" ¹â±ê³¬¹ı 80 ÁĞµÄÊ±ºòÕÛĞĞ
-set lbr						" ²»ÔÚµ¥´ÊÖĞ¼ä¶ÏĞĞ
-set fo+=mB					" ´ò¿ª¶ÏĞĞÄ£¿é¶ÔÑÇÖŞÓïÑÔÖ§³Ö¡£m ±íÊ¾ÔÊĞíÔÚÁ½¸öºº×ÖÖ®¼ä¶ÏĞĞ£¬¼´Ê¹ºº×ÖÖ®¼äÃ»ÓĞ³öÏÖ¿Õ¸ñ¡£B ±íÊ¾½«Á½ĞĞºÏ²¢ÎªÒ»ĞĞµÄÊ±ºò£¬ºº×ÖÓëºº×ÖÖ®¼ä²»Òª²¹¿Õ¸ñ¡£
+set history=400
 
-" Indent related
-set cindent					" C·ç¸ñ×Ô¶¯Ëõ½ø
-set autoindent				" ×Ô¶¯Ëõ½ø
+set encoding=utf-8           " VIMå†…éƒ¨ä½¿ç”¨ç¼–ç æ ¼å¼
+set fileencodings=utf-8,gb2312,gb18030,ucs-bom,latin1    " http://edyfox.codecarver.org/html/vim_fileencodings_detection.html
 
-" Editing related
-set backspace=start			" ²åÈëÄ£Ê½¼üÈë3¸ö×Ö·û£¬Ö®ºó°´5ÏÂÉ¾³ı£¬Ö»ÄÜÉ¾³ı3¸ö×Ö·û¼ÓµÃµ½Á½Éùà½à½£¬start ½â¾öÕâ¸öÎÊÌâ¡£
-set backspace=eol			" ²åÈëÄ£Ê½ÏÂ£¬¹â±ê´¦ÓÚĞĞÊ×£¬°´ÏÂÉ¾³ı£¬µÃµ½à½à½£¬eol ½â¾öÕâ¸öÎÊÌâ¡£
-set backspace=indent		" ÉèÖÃÁË×Ô¶¯Ëõ½øºó£¬Èç¹ûÇ°Ò»ĞĞËõ½øÁËÒ»¶¨¾àÀë£¬°´ÏÂ»Ø³µºó£¬ÏÂÒ»ĞĞÒ²»á±£³ÖÏàÍ¬µÄËõ½ø¡£Ä¬ÈÏÇé¿öÏÂ£¬ÎÒÃÇ²»ÄÜÔÚ Insert Ä£Ê½ÏÂÖ±½Ó°´ Backspace É¾³ıĞĞÊ×µÄËõ½ø£¬indent ½â¾öÁËÕâ¸öÎÊÌâ¡£
-set whichwrap=b,s,<,>,[,]	" Ä¬ÈÏÇé¿öÏÂ£¬ÔÚ VIM ÖĞµ±¹â±êÒÆµ½Ò»ĞĞ×î×ó±ßµÄÊ±ºò£¬ÎÒÃÇ¼ÌĞø°´×ó¼ü£¬¹â±ê²»ÄÜ»Øµ½ÉÏÒ»ĞĞµÄ×îÓÒ±ß¡£Í¬ÑùµØ£¬¹â±êµ½ÁËÒ»ĞĞ×îÓÒ±ßµÄÊ±ºò£¬ÎÒÃÇ²»ÄÜÍ¨¹ı¼ÌĞø°´ÓÒÌøµ½ÏÂÒ»ĞĞµÄ×î×ó±ß¡£
-set mouse=a					" ´ò¿ªÊó±ê¹¦ÄÜ
-set selectmode=				" ²»Ê¹ÓÃ selectmode£¬Ñ¡ÔñÄ£Ê½¾ÍÊÇ°´×¡Êó±êÑ¡ÔñÎÄ±¾
-set mousemodel=popup		" µ±ÓÒ¼üµ¥»÷´°¿ÚµÄÊ±ºò£¬µ¯³ö¿ì½İ²Ëµ¥¡£
-set keymodel=				" ²»Ê¹ÓÃ¡°Shift + ·½Ïò¼ü¡±Ñ¡ÔñÎÄ±¾
-set selection=inclusive		" Ö¸¶¨ÔÚÑ¡ÔñÎÄ±¾Ê±£¬¹â±êËùÔÚÎ»ÖÃÒ²ÊôÓÚ±»Ñ¡ÖĞµÄ·¶Î§¡£
-set wildmenu				" ÔÚÃüÁîÄ£Ê½ÏÂÊ¹ÓÃ Tab ×Ô¶¯²¹È«µÄÊ±ºò£¬½«²¹È«ÄÚÈİÊ¹ÓÃÒ»¸öÆ¯ÁÁµÄµ¥ĞĞ²Ëµ¥ĞÎÊ½ÏÔÊ¾³öÀ´
-
-" Encoding related
-set encoding=utf-8			" VIMÄÚ²¿Ê¹ÓÃ±àÂë¸ñÊ½
-set langmenu=zh_CN.UTF-8	" Ê¹ÓÃÖĞÎÄ²Ëµ¥£¬²¢Ê¹ÓÃ UTF-8 ±àÂë
-" language message zh_CN.UTF-8	" Ê¹ÓÃÖĞÎÄÌáÊ¾ĞÅÏ¢£¬²¢Ê¹ÓÃ UTF-8 ±àÂë
-set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,euc-kr,latin1		" http://edyfox.codecarver.org/html/vim_fileencodings_detection.html
-
-set list					" ÏÔÊ¾²»¿É¼û×Ö·û
-set listchars=tab:?\ ,trail:\ ,extends:?,precedes:?		" ½«ÖÆ±í·û tab ÏÔÊ¾Îª ¡­ ;½«Î²²¿¿Õ¸ñ trail ÏÔÊ¾Îª ¡¤ ;½«×óÔò³¬³öÆÁÄ»·¶Î§²¿·Ö precedes ±êÊ¶Îª ? ;½«ÓÒ²à³¬³öÆÁÄ»·¶Î§²¿·Ö extends ±êÊ¶Îª ?
-highlight SpecialKey ctermbg=Red guibg=Red	" ctermbg ÊÇ²ÊÉ«ÖÕ¶Ë±³¾°É«£¬guibg ÊÇGUI±³¾°É«
-
-" File type related
-filetype plugin indent on
-
-" Display related
-" ×ÜÊÇÏÔÊ¾×´Ì¬À¸
-set laststatus=2
-" ÓÒÏÂ½ÇÏÔÊ¾¹â±êµ±Ç°Î»ÖÃ
-set ruler
-" ¿ªÆôĞĞºÅÏÔÊ¾
-set number
-
-if has("gui_running")
-	" ½ûÖ¹ÏÔÊ¾¹ö¶¯Ìõ
-	set guioptions-=l
-	set guioptions-=L
-	set guioptions-=r
-	set guioptions-=R
-	" ½ûÖ¹ÏÔÊ¾²Ëµ¥ºÍ¹¤¾ßÌõ
-	set guioptions-=m
-	set guioptions-=T
+if &term == "xterm"
+    set t_Co=8
+    set t_Sb=^[[4%dm
+    set t_Sf=^[[3%dm
 endif
 
-" È¥µô»¶Ó­½çÃæ
-set shortmess=atI 
-" ¿ªÆôÊµÊ±ËÑË÷¹¦ÄÜ
-set incsearch
-" ËÑË÷Ê±¼°Ê±ÏÔÊ¾
-set showmatch
-" ËÑË÷Ê±´óĞ¡Ğ´²»Ãô¸Ğ
-set ignorecase
-" ÉèÖÃÖÇÄÜÄ£Ê½£¬µ±Äã²éÕÒ¼üÈëµÄÄÚÈİ¶¼ÊÇĞ¡Ğ´Ôò´óĞ¡Ğ´¶¼»áÆ¥Åä£¬Èç¹û¼üÈëÄÚÈİ°üº¬´óĞ´Ôò¾ÍÊÇ´óĞ¡Ğ´Ãô¸Ğ
-set smartcase
-" ÔÚ×´Ì¬À¸ÏÔÊ¾Ä¿Ç°ËùÖ´ĞĞµÄÖ¸Áî
-set showcmd
-" ÅäÉ«·½°¸
-set background=dark
-"colorscheme solarized
-colorscheme molokai
-"colorscheme phd
-" ¸ßÁÁÏÔÊ¾ËÑË÷½á¹û
-set hlsearch
-" ´ò¿ª¹Ø¼ü×ÖÉÏÉ«
-syntax on
+" å³ä¸‹è§’æ˜¾ç¤ºå…‰æ ‡å½“å‰ä½ç½®
+set ruler
+set laststatus=2        " æ€»æ˜¯æ˜¾ç¤ºçŠ¶æ€æ 
+highlight StatusLine cterm=bold ctermfg=yellow ctermbg=blue
+set statusline=%F%m%r%h%w\[POS=%l,%v][%p%%]\[%{&fileformat}]\[%{&encoding}]\[%{strftime(\"%Y-%m-%d\ %H:%M:%S\")}] 
+"set statusline=\ %<%F[%1*%M%*%n%R%H]%=\ %y\ %0(%{&fileformat}\ %{&encoding}\ %c:%l/%L%)\ 
 
-" ============================================================================
-" Shortcuts
-" ============================================================================
 
 let mapleader=","
 
-" ¶¨Òå¿ì½İ¼üµ½ĞĞÊ×ºÍĞĞÎ²
-nmap <Leader>lb 0
-nmap <Leader>le $
-" ÉèÖÃ¿ì½İ¼ü½«Ñ¡ÖĞÎÄ±¾¿é¸´ÖÆÖÁÏµÍ³¼ôÌù°å
-vnoremap <Leader>y "+y
-" ÉèÖÃ¿ì½İ¼ü½«ÏµÍ³¼ôÌù°åÄÚÈİÕ³ÌùÖÁ vim
-nmap <Leader>p "+p
-" ÒÀ´Î±éÀú×Ó´°¿Ú
-nnoremap nw <C-W><C-W>
-" Ìø×ªÖÁÓÒ·½µÄ´°¿Ú
-nnoremap <Leader>lw <C-W>l
-" Ìø×ªÖÁ×ó·½µÄ´°¿Ú
-nnoremap <Leader>hw <C-W>h
-" Ìø×ªÖÁÉÏ·½µÄ×Ó´°¿Ú
-nnoremap <Leader>kw <C-W>k
-" Ìø×ªÖÁÏÂ·½µÄ×Ó´°¿Ú
-nnoremap <Leader>jw <C-W>j
-"¶¨Òå±à¼­ÅäÖÃÎÄ¼ş¿ì½İ¼ü
+"å®šä¹‰ç¼–è¾‘é…ç½®æ–‡ä»¶å¿«æ·é”®
 nnoremap <leader>ev :split $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
-" ¶¨Òå¿ì½İ¼üÔÚ½á¶Ô·ûÖ®¼äÌø×ª£¬Öú¼Çpair
-nmap <Leader>pa %
 
-"=============================================================================
-" File types
-"=============================================================================
+set mouse=a					" æ‰“å¼€é¼ æ ‡åŠŸèƒ½
 
-" ¿ªÆôÎÄ¼şÀàĞÍÕì²â
-filetype on
-" ¸ù¾İÕì²âµ½µÄ²»Í¬ÀàĞÍ¼ÓÔØ¶ÔÓ¦µÄ²å¼ş
-filetype plugin on
 
-"=============================================================================
-" Platform dependent settings
-"=============================================================================
+" taglist æ’ä»¶
+nmap <F7> :TlistToggle <CR>
 
-if (has("win32"))
-    if (has("gui_running"))
-		"set guifont=YaHei\ Consolas\ Hybrid\ 11.5
-    endif
-else
-    if (has("gui_running"))
-        set guifont=Bitstream\ Vera\ Sans\ Mono\ 9
-    endif
-endif
+" SuperTab æ’ä»¶
+" è®°ä½ä¸Šæ¬¡çš„è¡¥å…¨æ–¹å¼ï¼Œç›´åˆ°æŒ‰ESCé€€å‡ºæ’å…¥æ¨¡å¼ä¸ºæ­¢
+let g:SuperTabRetainCompletionType=2
+" ä½¿ç”¨TABæ¥è¿›è¡Œè¡¥å…¨
+let g:SuperTabDefaultCompletionType="<C-X><C-O>"
+
+" --c++-kinds=+p : ä¸ºæ ‡ç­¾æ·»åŠ å‡½æ•°åŸå‹(prototype)ä¿¡æ¯
+" --fields=+iaS : ä¸ºæ ‡ç­¾æ·»åŠ ç»§æ‰¿ä¿¡æ¯(inheritance)ï¼Œè®¿é—®æ§åˆ¶(access)ä¿¡æ¯ï¼Œå‡½æ•°ç‰¹å¾(function Signature,å¦‚å‚æ•°è¡¨æˆ–åŸå‹ç­‰)
+" --extra=+q : ä¸ºç±»æˆå‘˜æ ‡ç­¾æ·»åŠ ç±»æ ‡è¯†
+nmap <F12> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q<CR>
+set tags+=tags
+set tags+=~/.vim/tags/libc.tags
+set tags+=~/.vim/tags/cpp.tags
+set tags+=~/.vim/tags/glib.tags
+set tags+=~/.vim/tags/susv2.tags
+set tags+=~/work_sp/tab/tags
+
+set completeopt=longest,menu
+
+" OmniCppComplete æ’ä»¶
+" ä¼šå®‰è£…ä»¥ä¸‹æ–‡ä»¶
+" after\ftplugin\cpp.vim
+" autoload\omni\common\debug.vim
+" autoload\omni\common\utils.vim
+" autoload\omni\cpp\complete.vim
+" autoload\omni\cpp\includes.vim
+" autoload\omni\cpp\items.vim
+" autoload\omni\cpp\maycomplete.vim
+" autoload\omni\cpp\namespaces.vim
+" autoload\omni\cpp\settings.vim
+" autoload\omni\cpp\tokenizer.vim
+" autoload\omni\cpp\utils.vim
+" doc\omnicppcomplete.txt
+" OmniComplete å¹¶ä¸æ˜¯æ’ä»¶çš„åå­—ï¼Œè€Œæ˜¯ Vim ä¼—å¤šè¡¥å…¨æ–¹å¼ä¸­çš„ä¸€ç§ï¼ˆå…¨èƒ½è¡¥å…¨ï¼‰ã€‚
+" OmniComplete å…¶å®å°±æ˜¯æ ¹æ®å…‰æ ‡å‰çš„å†…å®¹çŒœæµ‹å…‰æ ‡åçš„å†…å®¹ï¼Œå…·ä½“æ€ä¹ˆçŒœå–å†³äºæ‰€é‡‡ç”¨çš„è„šæœ¬ã€‚
+" OmniCppComplete å°±æ˜¯ä¸“ä¸º C/C++ ç¼–å†™çš„ OmniComplete ä¸€ä¸ªè¡¥å…¨è„šæœ¬ã€‚
+let OmniCpp_NamespaceSearch=1       " æŸ¥æ‰¾å½“å‰æ–‡ä»¶ç¼“å†²åŒºå†…çš„å‘½åç©ºé—´
+let OmniCpp_GlobalScopeSearch=1     " å…è®¸å…¨å±€æŸ¥æ‰¾æ§åˆ¶
+let OmniCpp_ShowAccess=1            " æ˜¾ç¤ºè®¿é—®æ§åˆ¶ä¿¡æ¯
+let OmniCpp_MayCompleteDot=1        " è¾“å…¥ .  åè‡ªåŠ¨è¡¥å…¨
+let OmniCpp_MayCompleteArrow=1      " è¾“å…¥ -> åè‡ªåŠ¨è¡¥å…¨
+let OmniCpp_MayCompleteScope=1      " è¾“å…¥ :: åè‡ªåŠ¨è¡¥å…¨
+let OmniCpp_DefaultNamespaces=["std","_GLIBCXX_STD"]    " é»˜è®¤å‘½åç©ºé—´åˆ—è¡¨ï¼Œä½¿ç”¨','éš”å¼€ã€‚
